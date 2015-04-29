@@ -1,0 +1,10 @@
+h2 Albums List
+
+.row
+  .col-xs-3
+    table.table.table-striped.table-haver
+      thead
+        th Album Name
+      tbody
+        tr(ng-repeat='name in names')
+          td: a(ui-sref='albums.show({name:name})') {{name}}
