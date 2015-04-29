@@ -1,0 +1,12 @@
+h3 Album Show
+.row
+  .col-xs-3
+    h4 {{album.name}}
+    h4 {{album.date}}
+    h4 {{album.description}}
+    form(name='albumShow', novalidate)
+      .form-group
+        label(for='addPhotoInput') Add Photo
+        input.form-control#addPhotoInput(type='file', ng-model='photo')
+        button.btn.btn-sm.btn-info(type='success', ng-click='addPhoto(photo)') Upload Photo
+        img
