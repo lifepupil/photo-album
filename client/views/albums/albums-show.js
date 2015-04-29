@@ -23,6 +23,10 @@ angular.module('poseidon')
       preview.src = '';
     }
   };
+  $scope.deletePhoto = function(index){
+    Album.deletePhoto(index, $scope.name);
+    console.log('click', index, $scope.name);
+  };
 
   function getPhotos(){
     var fbPhotos = $rootScope.fbUser.child('albums/' + $scope.name + '/photos');

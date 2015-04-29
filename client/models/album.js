@@ -25,6 +25,12 @@ angular.module('poseidon')
     albumTemp.date = album.date.getTime();
     afAlbums.$add(albumTemp);
   };
-
+  Album.deletePhoto = function(index, name){
+    var fbPhotos = $rootScope.fbUser.child('albums/' + name + '/photos');
+    var afPhotos = $firebaseArray(fbPhotos);
+    afPhotos.$loaded().then(function(){
+      afPhotos.$remove(index);
+    });
+  }
   return Album;
 });
