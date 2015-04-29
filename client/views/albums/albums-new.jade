@@ -1,0 +1,16 @@
+h2 Albums New
+.row
+  .col-xs-3.col-xs-offset-3
+    form(name='newAlbumForm', novalidate)
+      .form-group
+        lable(for='albumName') Album Name
+        input.form-control#albumName(type='text', ng-model='album.name')
+      .form-group
+        lable(for='albumDate') Album Date
+        input.form-control#albumDate(type='date', ng-model='album.date')
+      .form-group
+        lable(for='albumDiscription') Description
+        textarea.form-control#albumDescription(ng-model='album.description')
+      .form-group
+        button.btn.btn-success(type='submit', ng-click='add(album)') Add Album
+      

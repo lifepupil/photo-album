@@ -8,6 +8,9 @@ nav.navbar.navbar-default(ng-controller='NavCtrl')
         span.icon-bar
       a.navbar-brand(href='/') Poseidon
     #navbar.collapse.navbar-collapse
+      ul.nav.navbar-nav.navbar-left(ng-show='activeUser')
+        li: a(ui-sref='albums.new'): i.fa.fa.fa-picture-o &nbsp; New Album
+        li: a(ui-sref='albums.list'): i.fa.fa.fa-list &nbsp; List Albums
       ul.nav.navbar-nav.navbar-right(ng-show='activeUser')
         li: a(ui-sref='home'): i.fa.fa.fa-home &nbsp; Home
         li: a(ui-sref='about'): i.fa.fa.fa-info &nbsp; About
