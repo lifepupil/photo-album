@@ -6,9 +6,10 @@ angular.module('poseidon')
   $rootScope.afUser.$loaded()
   .then(function(){
     $scope.afPhotos = getPhotos();
+    $scope.album = $scope.afUser.albums;
   });
 
-  $scope.addPhoto = function(photo){
+  $scope.addPhoto = function(){
     var preview = document.querySelector('img');
     var file    = document.querySelector('input[type=file]').files[0];
     var reader  = new FileReader();
