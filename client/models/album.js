@@ -5,13 +5,13 @@ angular.module('poseidon')
   function Album(){
   }
 
-  Album.addPhoto = function(file) {
-    var fbAlbums = $rootScope.fbUser.child('albums/' + album.name);
-    var afAlbums = $firebaseArray(fbAlbums);
-    afAlbums.$add(file);
 
+  Album.addPhoto = function(file, name) {
+    var fbPhotos = $rootScope.fbUser.child('albums/' + name + '/photos');
+    var afPhotos = $firebaseArray(fbPhotos);
+    console.log(afPhotos);
+    return afPhotos.$add(file);
   };
-
 
   Album.add = function(album){
     var names = $rootScope.afUser.names ? $rootScope.afUser.names.split(',') : [];
@@ -23,7 +23,6 @@ angular.module('poseidon')
     $rootScope.afUser.$save();
     albumTemp.createdAt = $window.Firebase.ServerValue.TIMESTAMP;
     albumTemp.date = album.date.getTime();
-    console.info(albumTemp.date);
     afAlbums.$add(albumTemp);
   };
 

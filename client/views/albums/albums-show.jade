@@ -9,4 +9,9 @@ h3 Album Show
         label(for='addPhotoInput') Add Photo
         input.form-control#addPhotoInput(type='file', ng-model='photo')
         button.btn.btn-sm.btn-info(type='success', ng-click='addPhoto(photo)') Upload Photo
-        img
+        img.preview
+    table.table.table-striped.table-hover
+      tbody
+        tr(ng-repeat='photo in afPhotos')
+          td: img.img-responsive.img-thumbnail(ng-src='{{photo.$value}}')
+        
