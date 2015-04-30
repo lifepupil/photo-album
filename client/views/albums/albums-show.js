@@ -6,7 +6,18 @@ angular.module('poseidon')
   $rootScope.afUser.$loaded()
   .then(function(){
     $scope.afPhotos = getPhotos();
-    $scope.album = $scope.afUser.albums;
+    $scope.album = $rootScope.afUser.albums[$scope.name];
+    var keys = [];
+    var key;
+    for(var k in $scope.album){
+      keys.push(k);
+    }
+    key = keys[0];
+
+    $scope.album = $scope.album[key];
+    console.log($scope.album);
+    console.log('keys', keys);
+    console.log('key', key);
   });
 
   $scope.addPhoto = function(){

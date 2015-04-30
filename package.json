@@ -6,7 +6,7 @@
   "license": "BSD",
   "devDependencies": {
     "bower": "^1.4.1",
-    "browser-sync": "^2.6.7",
+    "browser-sync": "^2.6.9",
     "concurrent-transform": "^1.0.0",
     "gulp": "^3.8.11",
     "gulp-awspublish": "^2.0.0",
