@@ -31,6 +31,6 @@ angular.module('poseidon')
     afPhotos.$loaded().then(function(){
       afPhotos.$remove(index);
     });
-  }
+  };
   return Album;
 });

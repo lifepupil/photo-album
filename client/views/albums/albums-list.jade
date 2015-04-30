@@ -5,6 +5,8 @@ h2 Albums List
     table.table.table-striped.table-haver
       thead
         th Album Name
+        th Thumbnail
       tbody
         tr(ng-repeat='name in names')
-          td: a(ui-sref='albums.show({name:name})') {{name}}
+          td: a#thumbNail(ui-sref='albums.show({name:name})') {{name.name}}
+          td: img#thumbNail(ng-src='{{name.image}}')
