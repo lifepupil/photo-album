@@ -2,8 +2,9 @@ h3 Album Show
 .row#inputRow
   .col-xs-3
     h4 Album: {{name}}
-    h4 Date Created: {{date}}
-    
+    h4 Date: {{album.date | date:yyyy-MM-dd}}
+    h4 Date Created: {{album.createdAt | date:yyyy-MM-dd}}
+    h4 Description: {{album.description}}
   .col-xs-3
     form(name='albumShow', novalidate)
       .form-group
